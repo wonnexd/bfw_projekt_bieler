@@ -1,11 +1,15 @@
-.halfheight {
-    height: 100%;
+.minheight {
+    min-height: 50vh;
 }
 
-.testfarbe {
-    background-color: brown;
+.minwidth {
+    min-width: 50%;
 }
 
-.bodyheight {
-    height: 1000px;
+.zeromargin {
+    margin: 0%;
+}
+
+.centerlogin {
+    min-height: 40vh;
 }
