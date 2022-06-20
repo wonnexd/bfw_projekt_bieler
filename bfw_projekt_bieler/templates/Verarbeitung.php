@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // set the PDO error mode to exception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $sql = "UPDATE ausgabedb SET text1='$input1', text2='$input2', text3='$input3', text4='$input4' WHERE id=17";
+        $sql = "UPDATE ausgabedb SET text1='$input1', text2='$input2', text3='$input3', text4='$input4' WHERE id=1";
 
         // Prepare statement
         $stmt = $conn->prepare($sql);
@@ -30,22 +30,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $conn = null;
+    header("Location: Ausgabe.php");
 }
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    fertig
-    <a href="Ausgabe.php">Zur Ausgabe</a>
-</body>
-
-</html>

@@ -19,11 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verify MYME type of the file
         if (in_array($filetype, $allowed)) {
             // Check whether file exists before uploading it
-            if (file_exists("upload/" . $filename)) {
+            if (file_exists("./upload/" . $filename)) {
                 echo $filename . " is already exists.";
             } else {
-                move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $filename);
-                echo "Your file was uploaded successfully.";
+                move_uploaded_file($_FILES["photo"]["tmp_name"], "../upload/" . $filename);
+                echo "Your file was uploaded successfully. </br>";
+                echo '<a href="Eingabe.php">Zurück zur Eingabe</a>';
             }
         } else {
             echo "Error: There was a problem uploading your file. Please try again.";

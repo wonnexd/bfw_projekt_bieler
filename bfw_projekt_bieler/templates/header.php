@@ -11,6 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,8 @@ if ($conn->connect_error) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="static_files/bootstrap.css">
-    <script src="//cdn.ckeditor.com/4.11.1/standard/ckeditor.js"></script>
+    <link rel="stylesheet" href="../static_files/bootstrap.css">
+    <link rel="stylesheet" href="../static_files/mystyle.css">
+    <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
     <title>Document</title>
 </head>
