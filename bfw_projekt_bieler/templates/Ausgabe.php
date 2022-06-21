@@ -2,7 +2,7 @@
 include 'header.php'
 ?>
 
-<body class="">
+<body>
 
     <div class="row minheight zeromargin">
         <div class="col bg-warning">

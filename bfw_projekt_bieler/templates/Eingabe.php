@@ -32,75 +32,87 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
 
 <body>
 
-    <div class="container">
-        <div class="row">
+    <?php
+    if (isset($_SESSION['userid'])) {
+    ?>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link active" aria-current="page" href="Eingabe.php">Eingabe</a>
-                            <a class="nav-link" href="Ausgabe.php">Ausgabe</a>
+        <div class="container">
+            <div class="row">
+
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">Navbar</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active" aria-current="page" href="Eingabe.php">Eingabe</a>
+                                <a class="nav-link" href="Ausgabe.php">Ausgabe</a>
+                                <a class="nav-link" href="logout.php">Logout</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </nav>
+                </nav>
 
-            <form action="Verarbeitung.php" method="post">
-                <div class="row">
-                    <div class="col">
-                        <div class="form-floating">
-                            <textarea id='input1' name='input1' style='border: 1px solid black;'>
+                <form action="Eingabeverarbeitung.php.php" method="post">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating">
+                                <textarea id='input1' name='input1' style='border: 1px solid black;'>
                                 </textarea>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <input type="submit" value="Abschicken">
-            </form>
+                    <input type="submit" value="Abschicken">
+                </form>
 
-            <div class="mt-5">
-                <div class="h2">Vorhandene Bilder</div>
-                <div>Pfad einfach kopieren und einfügen</div>
-                <?php
-                if ($handle = opendir('../upload/')) {
+                <div class="mt-5">
+                    <div class="h2">Vorhandene Bilder</div>
+                    <div>Pfad einfach kopieren und einfügen</div>
+                    <?php
+                    if ($handle = opendir('../upload/')) {
 
-                    while (false !== ($entry = readdir($handle))) {
+                        while (false !== ($entry = readdir($handle))) {
 
-                        if ($entry != "." && $entry != "..") {
+                            if ($entry != "." && $entry != "..") {
 
-                            echo "../upload/$entry\n";
+                                echo "../upload/$entry\n";
+                            }
+                            echo '</br>';
                         }
-                        echo '</br>';
+
+                        closedir($handle);
                     }
+                    ?>
+                </div>
+                <div class="m-5">
+                    Login
+                    datum
+                    fehlen noch
 
-                    closedir($handle);
-                }
-                ?>
+                    id titel text pfadbild datum
+                    titel wysiwyg pfadbild datum
+
+                    query nach 4 jüngsten daten
+                </div>
+                <form action=" upload-manager.php" method="post" enctype="multipart/form-data">
+                    <h2>Upload Images</h2>
+                    <label for="fileSelect">Filename:</label>
+                    <input type="file" name="photo" id="fileSelect">
+                    <input type="submit" name="submit" value="Upload">
+                    <p><strong>Note:</strong> Only .jpg, .jpeg, .gif, .png formats allowed to a max size of 5 MB.</p>
+                </form>
+
             </div>
-            <div class="m-5">
-                Login
-                datum
-                fehlen noch
-
-                id titel text pfadbild datum
-                titel wysiwyg pfadbild datum
-
-                query nach 4 jüngsten daten
-            </div>
-            <form action=" upload-manager.php" method="post" enctype="multipart/form-data">
-                <h2>Upload Images</h2>
-                <label for="fileSelect">Filename:</label>
-                <input type="file" name="photo" id="fileSelect">
-                <input type="submit" name="submit" value="Upload">
-                <p><strong>Note:</strong> Only .jpg, .jpeg, .gif, .png formats allowed to a max size of 5 MB.</p>
-            </form>
-
         </div>
-    </div>
+
+    <?php
+    } else {
+        echo 'bitte einlogen <a href="Login.php">Hier klicken</a>';
+    } ?>
+
+
 
     <script type="text/javascript">
         // Initialize CKEditor
