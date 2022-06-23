@@ -10,7 +10,7 @@ include 'header.php';
                 <form action="loginverarbeitung.php" method="post">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
-                        <input type="email" class="form-control" name="username" id="username" aria-describedby="username">
+                        <input type="text" class="form-control" name="username" id="username" aria-describedby="username">
                     </div>
                     <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
