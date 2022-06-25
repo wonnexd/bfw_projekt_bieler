@@ -1,40 +1,12 @@
 <?php
 include 'header.php';
-
-if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
-    $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
-    $filename = $_FILES["photo"]["name"];
-    $filetype = $_FILES["photo"]["type"];
-    $filesize = $_FILES["photo"]["size"];
-
-    // Verify file extension
-    $ext = pathinfo($filename, PATHINFO_EXTENSION);
-    if (!array_key_exists($ext, $allowed)) die("Error: Please select a valid file format.");
-
-    // Verify file size - 5MB maximum
-    $maxsize = 5 * 1024 * 1024;
-    if ($filesize > $maxsize) die("Error: File size is larger than the allowed limit.");
-
-    // Verify MYME type of the file
-    if (in_array($filetype, $allowed)) {
-        // Check whether file exists before uploading it
-        if (file_exists("upload/" . $filename)) {
-            echo $filename . " is already exists.";
-        } else {
-            move_uploaded_file($_FILES["photo"]["tmp_name"], "upload/" . $filename);
-            echo "Your file was uploaded successfully.";
-        }
-    } else {
-        echo "Error: There was a problem uploading your file. Please try again.";
-    }
-}
 ?>
 
 <body>
 
     <?php
     if (isset($_SESSION['userid'])) {
-    ?>
+        ?>
 
         <div class="container">
             <div class="row">
@@ -55,16 +27,37 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
                     </div>
                 </nav>
 
-                <form action="Eingabeverarbeitung.php.php" method="post">
+                <form action="Eingabebearbeitung.php" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                        <div class="col">
+                            Titel einfügen <br>
+                            <input type="text" size="40"  name="titel"><br>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-floating">
-                                <textarea id='input1' name='input1' style='border: 1px solid black;'>
+                                <textarea id='text' name='text' style='border: 1px solid black;'>
                                 </textarea>
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Abschicken">
+                    <div class="row">
+                        <div class="col">
+                            <h2>Upload Images</h2>
+                            <label for="fileSelect">Filename:</label>
+                            <input type="file" name="photo" id="fileSelect">
+
+                            <p><strong>Note:</strong> Only .jpg, .jpeg, .gif, .png formats allowed to a max size of 5 MB.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            aktuelles Datum<br>
+                            <input type="date" size="40" name="date"><br>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" value="Erstellen">
                 </form>
 
                 <div class="mt-5">
@@ -86,37 +79,19 @@ if (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
                     }
                     ?>
                 </div>
-                <div class="m-5">
-                    Login
-                    datum
-                    fehlen noch
-
-                    id titel text pfadbild datum
-                    titel wysiwyg pfadbild datum
-
-                    query nach 4 jüngsten daten
-                </div>
-                <form action=" upload-manager.php" method="post" enctype="multipart/form-data">
-                    <h2>Upload Images</h2>
-                    <label for="fileSelect">Filename:</label>
-                    <input type="file" name="photo" id="fileSelect">
-                    <input type="submit" name="submit" value="Upload">
-                    <p><strong>Note:</strong> Only .jpg, .jpeg, .gif, .png formats allowed to a max size of 5 MB.</p>
-                </form>
 
             </div>
         </div>
 
-    <?php
+        <?php
     } else {
         echo 'bitte einlogen <a href="Login.php">Hier klicken</a>';
-    } ?>
-
-
+    }
+    ?>
 
     <script type="text/javascript">
         // Initialize CKEditor
-        CKEDITOR.replace('input1', {
+        CKEDITOR.replace('text', {
             height: "200px"
         });
     </script>
