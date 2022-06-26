@@ -31,13 +31,13 @@ include 'header.php';
                     <div class="row">
                         <div class="col">
                             Titel einfügen <br>
-                            <input type="text" size="40"  name="titel"><br>
+                            <input type="text" size="40"  name="titel" required><br>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
                             <div class="form-floating">
-                                <textarea id='text' name='text' style='border: 1px solid black;'>
+                                <textarea id='text' name='text' required style='border: 1px solid black;'>
                                 </textarea>
                             </div>
                         </div>
@@ -54,14 +54,14 @@ include 'header.php';
                     <div class="row">
                         <div class="col">
                             aktuelles Datum<br>
-                            <input type="date" size="40" name="date"><br>
+                            <input type="date" size="40" name="date" required><br>
                         </div>
                     </div>
                     <input type="submit" name="submit" value="Erstellen">
                 </form>
 
                 <div class="mt-5">
-                    <div class="h2">Vorhandene Bilder</div>
+                    <div class="h2">Vorhandene Bilder für WYSIWYG</div>
                     <div>Pfad einfach kopieren und einfügen</div>
                     <?php
                     if ($handle = opendir('../upload/')) {

@@ -5,7 +5,7 @@ include 'header.php'
 <body>
 
     <div class="row minheight zeromargin">
-        <div class="col bg-warning">
+        <div class="col bg-warning text-center">
             <?php
             $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 1";
             foreach ($pdo->query($sql) as $row) {
@@ -18,7 +18,7 @@ include 'header.php'
             }
             ?>
         </div>
-        <div class="col bg-danger">
+        <div class="col bg-danger text-center">
             <?php
             $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 1,1";
             foreach ($pdo->query($sql) as $row) {
@@ -33,7 +33,7 @@ include 'header.php'
         </div>
     </div>
     <div class="row minheight zeromargin">
-        <div class="col bg-primary">
+        <div class="col bg-primary text-center">
             <?php
             $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 2,1";
             foreach ($pdo->query($sql) as $row) {
@@ -46,7 +46,7 @@ include 'header.php'
             }
             ?>
         </div>
-        <div class="col bg-success">
+        <div class="col bg-success text-center">
             <?php
             $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 3, 1";
             foreach ($pdo->query($sql) as $row) {

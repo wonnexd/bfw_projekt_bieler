@@ -13,6 +13,6 @@ $pdo = new PDO('mysql:host=localhost;dbname=bieler', 'root', '');
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../static_files/bootstrap.css">
         <link rel="stylesheet" href="../static_files/mystyle.css">
-        <script src="//cdn.ckeditor.com/4.19.0/standard/ckeditor.js"></script>
+        <script src="../static_files/ckeditor/ckeditor.js"></script>
         <title>Document</title>
     </head>
