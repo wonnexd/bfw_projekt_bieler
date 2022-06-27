@@ -14,7 +14,7 @@ include 'header.php'
                 if ($row['picture'] != "") {
                     echo "<img src='../upload/" . $row['picture'] . "' height='200' width='200'></br> ";
                 }
-                echo $row['date'] . "><br />";
+                echo $row['date'] . "<br />";
             }
             ?>
         </div>
@@ -27,7 +27,7 @@ include 'header.php'
                 if ($row['picture'] != "") {
                     echo "<img src='../upload/" . $row['picture'] . "' height='200' width='200'></br> ";
                 }
-                echo $row['date'] . "><br />";
+                echo $row['date'] . "<br />";
             }
             ?>
         </div>
@@ -42,7 +42,7 @@ include 'header.php'
                 if ($row['picture'] != "") {
                     echo "<img src='../upload/" . $row['picture'] . "' height='200' width='200'></br> ";
                 }
-                echo $row['date'] . "><br />";
+                echo $row['date'] . "<br />";
             }
             ?>
         </div>
@@ -55,7 +55,7 @@ include 'header.php'
                 if ($row['picture'] != "") {
                     echo "<img src='../upload/" . $row['picture'] . "' height='200' width='200'></br> ";
                 }
-                echo $row['date'] . "><br />";
+                echo $row['date'] . "<br />";
             }
             ?>
         </div>

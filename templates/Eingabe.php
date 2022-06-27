@@ -20,6 +20,7 @@ include 'header.php';
                         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                             <div class="navbar-nav">
                                 <a class="nav-link active" aria-current="page" href="Eingabe.php">Eingabe</a>
+                                <a class="nav-link" href="laufband.php">Laufbänder</a>
                                 <a class="nav-link" href="Ausgabe.php">Ausgabe</a>
                                 <a class="nav-link" href="logout.php">Logout</a>
                             </div>
@@ -97,6 +98,13 @@ include 'header.php';
     </script>
 
     <script src="./static_files/bootstrap.js"></script>
+    <div class="mt-5"> Expire date
+        Moving pictures
+        Unten fester bereich footer
+        Antiquariart telefon etc.
+        Großer bereich bilder wechseln
+        Oben laufband
+    </div>
 </body>
 
 </html>
