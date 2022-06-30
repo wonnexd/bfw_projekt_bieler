@@ -1,16 +1,17 @@
 <?php
 
-include 'header.php';
+include 'base_template.php';
+$date_today = date("Y-m-d");
 
 $titel = $_POST['titel'];
 $text = $_POST['text'];
-$date = $_POST['date'];
+$expiration_date = $_POST['expiration_date'];
 
 # https://stackoverflow.com/questions/17492136/php-upload-if-isset-always-says-it-is
 #is_uploaded_file — Tells whether the file was uploaded via HTTP POST
 if (!file_exists($_FILES['photo']['tmp_name']) || !is_uploaded_file($_FILES['photo']['tmp_name'])) {
-    $statement = $pdo->prepare("INSERT INTO ausgabedb (titel, text, date ) VALUES (?, ?, ?)");
-    $statement->execute(array($titel, $text, $date));
+    $statement = $pdo->prepare("INSERT INTO ausgabedb (titel, text, date, expiration_date) VALUES (?, ?, ?, ?)");
+    $statement->execute(array($titel, $text, $date_today, $expiration_date));
     header("Location: Ausgabe.php");
 }
 
@@ -39,8 +40,8 @@ elseif (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
             echo $filename . " is already exists.";
         } else {
             move_uploaded_file($_FILES["photo"]["tmp_name"], "../upload/" . $filename);
-            $statement = $pdo->prepare("INSERT INTO ausgabedb (titel, text, picture, date ) VALUES (?, ?, ?, ?)");
-            $statement->execute(array($titel, $text, $filename, $date));
+            $statement = $pdo->prepare("INSERT INTO ausgabedb (titel, text, picture, date, expiration_date ) VALUES (?, ?, ?, ?, ?)");
+            $statement->execute(array($titel, $text, $filename, $date_today, $expiration_date));
             echo "Your file was uploaded successfully. </br>";
             echo '<a href="Eingabe.php">Zurück zur Eingabe</a>';
         }
@@ -51,4 +52,3 @@ elseif (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
 } else {
     echo "Error: " . $_FILES["photo"]["error"];
 }
-

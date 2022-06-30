@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'base_template.php';
 ?>
 
 <body>
@@ -54,8 +54,8 @@ include 'header.php';
                     </div>
                     <div class="row">
                         <div class="col">
-                            aktuelles Datum<br>
-                            <input type="date" size="40" name="date" required><br>
+                            Zu sehen bis zum (optional)<br>
+                            <input type="date" size="40" name="expiration_date"><br>
                         </div>
                     </div>
                     <input type="submit" name="submit" value="Erstellen">
@@ -98,12 +98,13 @@ include 'header.php';
     </script>
 
     <script src="./static_files/bootstrap.js"></script>
-    <div class="mt-5"> Expire date
-        Moving pictures
-        Unten fester bereich footer
-        Antiquariart telefon etc.
-        Großer bereich bilder wechseln
-        Oben laufband
+    <div class="mt-5">
+        laufbänder einbinden
+        gestaltung frontend
+
+        prepared statements
+        bewegte bilder
+        mehrere bilder uploaden bzw. datenbankstruktur für bilder verändern
     </div>
 </body>
 

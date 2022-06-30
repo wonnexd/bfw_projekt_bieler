@@ -1,5 +1,5 @@
 <?php
-include 'header.php';
+include 'base_template.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 

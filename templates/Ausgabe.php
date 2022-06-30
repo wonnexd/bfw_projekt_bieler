@@ -1,13 +1,24 @@
 <?php
-include 'header.php'
+include 'base_template.php';
+$date = date("Y-m-d");
 ?>
 
 <body>
 
+    <div class="row headerheight zeromargin">
+        <div class="col text-center">
+            <?php
+            $sql = "SELECT headertext FROM headerfoooterdb where id = 1";
+            foreach ($pdo->query($sql) as $row) {
+                echo $row['headertext'] . "<br />";
+            }
+            ?>
+        </div>
+    </div>
     <div class="row minheight zeromargin">
         <div class="col bg-warning text-center">
             <?php
-            $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 1";
+            $sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
             foreach ($pdo->query($sql) as $row) {
                 echo $row['titel'] . "<br />";
                 echo $row['text'] . "<br />";
@@ -20,7 +31,7 @@ include 'header.php'
         </div>
         <div class="col bg-danger text-center">
             <?php
-            $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 1,1";
+            $sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1,1";
             foreach ($pdo->query($sql) as $row) {
                 echo $row['titel'] . "<br />";
                 echo $row['text'] . "<br />";
@@ -35,7 +46,7 @@ include 'header.php'
     <div class="row minheight zeromargin">
         <div class="col bg-primary text-center">
             <?php
-            $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 2,1";
+            $sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 2,1";
             foreach ($pdo->query($sql) as $row) {
                 echo $row['titel'] . "<br />";
                 echo $row['text'] . "<br />";
@@ -48,7 +59,7 @@ include 'header.php'
         </div>
         <div class="col bg-success text-center">
             <?php
-            $sql = "SELECT titel, text, picture, date FROM ausgabedb ORDER BY date DESC LIMIT 3, 1";
+            $sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 3,1";
             foreach ($pdo->query($sql) as $row) {
                 echo $row['titel'] . "<br />";
                 echo $row['text'] . "<br />";
@@ -58,6 +69,18 @@ include 'header.php'
                 echo $row['date'] . "<br />";
             }
             ?>
+        </div>
+    </div>
+    <div class="row headerheight zeromargin">
+        <div class="col text-center">
+            <marquee>
+                <?php
+                $sql = "SELECT footertext FROM headerfoooterdb where id = 1";
+                foreach ($pdo->query($sql) as $row) {
+                    echo $row['footertext'] . "<br />";
+                }
+                ?>
+            </marquee>
         </div>
     </div>
 

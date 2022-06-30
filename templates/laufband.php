@@ -1,12 +1,12 @@
 <?php
-include 'header.php';
+include 'base_template.php';
 ?>
 
 <body>
 
     <div class="container">
-        <div class="row">
 
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">Navbar</a>
@@ -23,26 +23,40 @@ include 'header.php';
                     </div>
                 </div>
             </nav>
-
-            <form action="laufbandbearbeitung.php" method="post">
-                <div class="container col loginposition text-center">
-                    <div class="row">
-                        <div class="col">
-                            Laufbandtext einfügen <br>
-                            <input type="text" size="150"  name="laufbandbearbeitung" required><br>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            Footertext einfügen<br>
-                            <input type="text" size="150" name="footertext" required><br>
-                        </div>
-                    </div>
-                    <input type="submit" name="submit" value="Erstellen">
-                </div>
-            </form>
-
         </div>
+
+        <form action="laufbandbearbeitung.php" method="post">
+            <div>
+                <div class="row">
+                    <div class="col">
+                        Headertext hier eingeben
+                        <textarea id='headertext' name='headertext' required style='border: 1px solid black;'>
+                        </textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        Footertext eingeben
+                        <textarea id='footertext' name='footertext' required style='border: 1px solid black;'>
+                        </textarea>
+                    </div>
+                </div>
+                <input type="submit" name="submit" value="Erstellen">
+            </div>
+        </form>
+
     </div>
+
+    <script type="text/javascript">
+        // Initialize CKEditor
+        CKEDITOR.replace('headertext', {
+            height: "150px"
+        });
+        CKEDITOR.replace('footertext', {
+            height: "150px"
+        });
+    </script>
+
+    <script src="./static_files/bootstrap.js"></script>
 
 </body>
