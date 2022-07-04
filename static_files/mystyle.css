@@ -1,9 +1,11 @@
 .minheight {
     min-height: 44vh;
+    min-height: 44vh;
 }
 
 .headerheight {
-        min-height: 6vh;
+    min-height: 6vh;
+    max-height: 6vh;
 }
 
 .minwidth {
