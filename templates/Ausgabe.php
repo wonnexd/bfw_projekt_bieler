@@ -84,7 +84,7 @@ $date = date("Y-m-d");
                 foreach ($pdo->query($sql) as $row) {
                     echo $row['footertext'] . "<br />";
                 }
-                ?>
+                ?><
             </div>
         </div>
     </div>
