@@ -3,10 +3,15 @@ include 'base_template.php';
 $date = date("Y-m-d");
 ?>
 
+<!--site autorefresh
+<head>
+    <meta http-equiv="refresh" content="5" >
+</head>-->
+
 <body>
 
     <div class="row headerheight zeromargin">
-        <div class="col text-center">
+        <div class="col text-center p-0">
             <?php
             $sql = "SELECT headertext FROM headerfoooterdb where id = 1";
             foreach ($pdo->query($sql) as $row) {
@@ -72,19 +77,17 @@ $date = date("Y-m-d");
         </div>
     </div>
     <div class="row headerheight zeromargin">
-        <div class="col text-center">
-            <marquee>
+        <div class="col text-center p-0">
+            <div>
                 <?php
                 $sql = "SELECT footertext FROM headerfoooterdb where id = 1";
                 foreach ($pdo->query($sql) as $row) {
                     echo $row['footertext'] . "<br />";
                 }
                 ?>
-            </marquee>
+            </div>
         </div>
     </div>
 
-    <script src="static_files/bootstrap.js"></script>
-</body>
-
-</html>
+    <?php
+    include 'base_template_footer.php';
