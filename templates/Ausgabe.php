@@ -72,7 +72,7 @@ foreach ($pdo->query($sql) as $row) {
             <div class="fw-bold responvie_font_big">
                 <?php echo $titel1 . "<br />"; ?>
             </div>
-            <div class="responsiv_font_standard">
+            <div class="responvie_font_standard mb-3">
                 <?php echo $text1 . "<br />"; ?>
             </div>
             <?php echo $picture1 . "<br />"; ?>
@@ -82,7 +82,7 @@ foreach ($pdo->query($sql) as $row) {
             <div class="fw-bold responvie_font_big">
                 <?php echo $titel2 . "<br />"; ?>
             </div>
-            <div class="responsiv_font_standard">
+            <div class="responvie_font_standard mb-3">
                 <?php echo $text2 . "<br />"; ?>
             </div>
             <?php echo $picture2 . "<br />"; ?>
@@ -103,7 +103,7 @@ foreach ($pdo->query($sql) as $row) {
             <div class="fw-bold responvie_font_big">
                 <?php echo $titel3 . "<br />"; ?>
             </div>
-            <div class="responsiv_font_standard">
+            <div class="responvie_font_standard mb-3">
                 <?php echo $text3 . "<br />"; ?>
             </div>
             <?php echo $picture3 . "<br />"; ?>
@@ -113,7 +113,7 @@ foreach ($pdo->query($sql) as $row) {
             <div class="fw-bold responvie_font_big">
                 <?php echo $titel4 . "<br />"; ?>
             </div>
-            <div class="responsiv_font_standard">
+            <div class="responvie_font_standard mb-3">
                 <?php echo $text4 . "<br />"; ?>
             </div>
             <?php echo $picture4 . "<br />"; ?>
@@ -129,9 +129,9 @@ foreach ($pdo->query($sql) as $row) {
         </div>
     </div>
 
-
     <div class="row headerheight zeromargin">
         <div class="col text-center text-primary my-auto responvie_font_standard">
+            <hr>
             <?php echo $footertext; ?>
         </div>
     </div>
