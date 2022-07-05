@@ -131,7 +131,7 @@ foreach ($pdo->query($sql) as $row) {
 
     <div class="row headerheight zeromargin">
         <div class="col text-center text-primary my-auto responvie_font_standard">
-            <hr>
+            <hr class="">
             <?php echo $footertext; ?>
         </div>
     </div>
