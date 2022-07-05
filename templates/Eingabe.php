@@ -99,11 +99,10 @@ include 'base_template.php';
 
     <div class="mt-5">
         gestaltung frontend + fonts responsiv
-        prepared statements
         bilder einzeln hochladen
         eingabe in der bearbeitung limitieren (responsivness)
         eingabebearbeitung schön machen
-        change date?
+
 
         bewegte bilder
         mehrere bilder uploaden bzw. datenbankstruktur für bilder verändern
