@@ -98,7 +98,8 @@ include 'base_template.php';
     </script>
 
     <div class="mt-5">
-        gestaltung frontend + fonts responsiv
+        date to datetime
+        beiträge deleten
         bilder einzeln hochladen
         eingabe in der bearbeitung limitieren (responsivness)
         eingabebearbeitung schön machen

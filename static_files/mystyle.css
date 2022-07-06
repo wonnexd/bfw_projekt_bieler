@@ -1,6 +1,6 @@
 .textheight {
-    min-height: 37vh;
-    max-height: 37vh;
+    min-height: 21vh;
+    max-height: 21vh;
 }
 
 .responvie_font_big {
@@ -16,13 +16,13 @@
 }
 
 .dateheight {
-    min-height: 3vh;
-    max-height: 3vh;
+    min-height: 21vh;
+    max-height: 21vh;
 }
 
 .headerheight {
-    min-height: 10vh;
-    max-height: 10vh;
+    min-height: 8vh;
+    max-height: 8vh;
 }
 
 .minwidth {
@@ -35,4 +35,9 @@
 
 .loginposition {
     margin-top: 40vh;
+}
+
+.padding_for_centering {
+    padding-left: 15%;
+    padding-right: 15%;
 }

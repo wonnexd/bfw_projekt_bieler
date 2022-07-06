@@ -61,6 +61,7 @@ foreach ($pdo->query($sql) as $row) {
 }
 ?>
 
+
 <!--site autorefresh
 <head>
     <meta http-equiv="refresh" content="5" >
@@ -101,12 +102,18 @@ foreach ($pdo->query($sql) as $row) {
                 <?php echo $picture1 . "<br />"; ?>
             </div>
             <?php echo $date1 . "<br />"; ?>
+            <form action="delete_handling.php" method="get">
+                <button type="submit" name="id1" value="value">Submit</button>
+            </form>
         </div>
         <div class="col text-center">
             <div>
                 <?php echo $picture2 . "<br />"; ?>
             </div>
             <?php echo $date2 . "<br />"; ?>
+            <form action="delete_handling.php" method="get">
+                <button type="submit" name="id2" value="value">Submit</button>
+            </form>
         </div>
     </div>
 
@@ -136,12 +143,18 @@ foreach ($pdo->query($sql) as $row) {
                 <?php echo $picture3 . "<br />"; ?>
             </div>
             <?php echo $date3 . "<br />"; ?>
+            <form action="delete_handling.php" method="get">
+                <button type="submit" name="id3" value="value">Submit</button>
+            </form>
         </div>
         <div class="col text-center">
             <div>
                 <?php echo $picture4 . "<br />"; ?>
             </div>
             <?php echo $date4 . "<br />"; ?>
+            <form action="delete_handling.php" method="get">
+                <button type="submit" name="id4" value="value">Submit</button>
+            </form>
         </div>
     </div>
 
