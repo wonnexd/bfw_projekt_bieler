@@ -1,54 +1,54 @@
 <?php
 include 'base_template.php';
-$date = date("Y-m-d");
+$date = date("Y-m-d H:i:s");
 
 $sql = "SELECT headertext FROM headerfoooterdb where id = 1";
 foreach ($pdo->query($sql) as $row) {
     $headertext = $row['headertext'];
 }
 
-$sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
+$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
 foreach ($pdo->query($sql) as $row) {
-    $titel1 = $row['titel'];
+    $title1 = $row['title'];
     $text1 = $row['text'];
     if ($row['picture'] != "") {
-        $picture1 = "<img src = '../upload/" . $row['picture'] . "' height = '110 %'>";
+        $picture1 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
     } else {
         $picture1 = "";
     }
     $date1 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1, 1";
+$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1,1";
 foreach ($pdo->query($sql) as $row) {
-    $titel2 = $row['titel'];
+    $title2 = $row['title'];
     $text2 = $row['text'];
     if ($row['picture'] != "") {
-        $picture2 = "<img src = '../upload/" . $row['picture'] . "' height = '110 %'>";
+        $picture2 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
     } else {
         $picture2 = "";
     }
     $date2 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 2, 1";
+$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 2, 1";
 foreach ($pdo->query($sql) as $row) {
-    $titel3 = $row['titel'];
+    $title3 = $row['title'];
     $text3 = $row['text'];
     if ($row['picture'] != "") {
-        $picture3 = "<img src = '../upload/" . $row['picture'] . "' height = '110 %'>";
+        $picture3 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
     } else {
         $picture3 = "";
     }
     $date3 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT titel, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 3, 1";
+$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 3, 1";
 foreach ($pdo->query($sql) as $row) {
-    $titel4 = $row['titel'];
+    $title4 = $row['title'];
     $text4 = $row['text'];
     if ($row['picture'] != "") {
-        $picture4 = "<img src = '../upload/" . $row['picture'] . "' height = '110 %'>";
+        $picture4 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
     } else {
         $picture4 = "";
     }
@@ -69,8 +69,8 @@ foreach ($pdo->query($sql) as $row) {
 <body>
 
     <div class="row headerheight zeromargin ">
-        <div class="col text-center text-primary my-auto responvie_font_standard">
-            <?php echo $headertext; ?>
+        <div class="col text-center text-primary my-auto responvie_font_big">
+            <?php echo $headertext; ?> 
         </div>
     </div>
 
@@ -78,7 +78,7 @@ foreach ($pdo->query($sql) as $row) {
     <div class="row textheight zeromargin pt-3 border-top">
         <div class="col text-center">
             <div class="fw-bold responvie_font_big padding_for_centering">
-                <?php echo $titel1 . "<br />"; ?>
+                <?php echo $title1 . "<br />"; ?>
             </div>
             <div class="responvie_font_standard mb-3 padding_for_centering">
                 <?php echo $text1 . "<br />"; ?>
@@ -87,7 +87,7 @@ foreach ($pdo->query($sql) as $row) {
 
         <div class="col text-center">
             <div class="fw-bold responvie_font_big padding_for_centering">
-                <?php echo $titel2 . "<br />"; ?>
+                <?php echo $title2 . "<br />"; ?>
             </div>
             <div class="responvie_font_standard mb-3 padding_for_centering">
                 <?php echo $text2 . "<br />"; ?>
@@ -113,7 +113,7 @@ foreach ($pdo->query($sql) as $row) {
     <div class="row textheight zeromargin border-top pt-3">
         <div class="col text-center">
             <div class="fw-bold responvie_font_big padding_for_centering">
-                <?php echo $titel3 . "<br />"; ?>
+                <?php echo $title3 . "<br />"; ?>
             </div>
             <div class="responvie_font_standard mb-3 padding_for_centering">
                 <?php echo $text3 . "<br />"; ?>
@@ -122,7 +122,7 @@ foreach ($pdo->query($sql) as $row) {
 
         <div class="col text-center">
             <div class="fw-bold responvie_font_big padding_for_centering">
-                <?php echo $titel4 . "<br />"; ?>
+                <?php echo $title4 . "<br />"; ?>
             </div>
             <div class="responvie_font_standard mb-3 padding_for_centering">
                 <?php echo $text4 . "<br />"; ?>

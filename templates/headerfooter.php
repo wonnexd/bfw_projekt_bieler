@@ -6,24 +6,23 @@ include 'base_template.php';
 
     <div class="container">
 
-        <div class="row">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                        <div class="navbar-nav">
-                            <a class="nav-link" aria-current="page" href="Eingabe.php">Eingabe</a>
-                            <a class="nav-link active"<" href="laufband.php">Laufbänder</a>
-                            <a class="nav-link" href="Ausgabe.php">Ausgabe</a>
-                            <a class="nav-link" href="logout.php">Logout</a>
-                        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link" aria-current="page" href="input.php">Eingabe</a>
+                        <a class="nav-link active" href="headerfooter.php">Laufbänder</a>
+                        <a class="nav-link" href="delete.php">Löschen</a>
+                        <a class="nav-link" href="output.php">Ausgabe</a>
+                        <a class="nav-link" href="logout.php">Logout</a>
                     </div>
                 </div>
-            </nav>
-        </div>
+            </div>
+        </nav>
 
         <form action="laufbandbearbeitung.php" method="post">
             <div>
