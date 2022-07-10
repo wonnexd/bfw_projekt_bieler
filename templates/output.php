@@ -70,7 +70,7 @@ foreach ($pdo->query($sql) as $row) {
 
     <div class="row headerheight zeromargin ">
         <div class="col text-center text-primary my-auto responvie_font_big">
-            <?php echo $headertext; ?> 
+            <?php echo $headertext; ?>
         </div>
     </div>
 
@@ -95,7 +95,7 @@ foreach ($pdo->query($sql) as $row) {
         </div>
     </div>
 
-    <div class="row dateheight zeromargin responvie_font_small align-items-end pb-3">
+    <div class="row dateheight zeromargin responvie_font_small align-items-end pb-3 border-bottom">
         <div class="col text-center">
             <div>
                 <?php echo $picture1 . "<br />"; ?>
@@ -110,7 +110,7 @@ foreach ($pdo->query($sql) as $row) {
         </div>
     </div>
 
-    <div class="row textheight zeromargin border-top pt-3">
+    <div class="row textheight zeromargin pt-3">
         <div class="col text-center">
             <div class="fw-bold responvie_font_big padding_for_centering">
                 <?php echo $title3 . "<br />"; ?>

@@ -15,3 +15,5 @@ $pdo = new PDO('mysql:host=localhost;dbname=bieler', 'root', '');
         <script src="../static_files/ckeditor/ckeditor.js"></script>
         <title>Document</title>
     </head>
+
+    <body>
