@@ -1,8 +1,3 @@
-.textheight {
-    min-height: 21vh;
-    max-height: 21vh;
-}
-
 .responvie_font_big {
     font-size: 2.3vh;
 }
@@ -15,14 +10,19 @@
     font-size: 1vh;
 }
 
+.textheight {
+    min-height: 21vh;
+    max-height: 21vh;
+}
+
 .dateheight {
     min-height: 21vh;
     max-height: 21vh;
 }
 
 .headerheight {
-    min-height: 8vh;
-    max-height: 8vh;
+    min-height: 7vh;
+    max-height: 7vh;
 }
 
 .minwidth {

@@ -86,7 +86,7 @@ if (isset($_SESSION['userid'])) {
 
     <?php
 } else {
-    echo 'bitte einlogen <a href="Login.php">Hier klicken</a>';
+    echo 'bitte einlogen <a href="login.php">Hier klicken</a>';
 }
 ?>
 

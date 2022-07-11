@@ -12,4 +12,4 @@ $statement->bindParam(':headertext_neu', $headertext, PDO::PARAM_STR);
 $statement->bindParam(':footertext_neu', $footertext, PDO::PARAM_STR);
 
 $statement->execute(array('id' => 1, 'headertext_neu' => $headertext, 'footertext_neu' => $footertext));
-header("Location: Ausgabe.php");
+header("Location: output.php");

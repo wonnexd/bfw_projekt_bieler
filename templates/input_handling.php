@@ -1,23 +1,27 @@
 <?php
 
 include 'inc/base_template.php';
-$date_today = date("Y-m-d H:i:s");
+$date_today = date('Y-m-d H:i:s');
 
 $title = $_POST['title'];
 $text = $_POST['text'];
 $expiration_date = $_POST['expiration_date'];
 
+if ($expiration_date == '') {
+    $expiration_date = '2100-07-21 03:36:00';
+}
+
 # https://stackoverflow.com/questions/17492136/php-upload-if-isset-always-says-it-is
 #is_uploaded_file — Tells whether the file was uploaded via HTTP POST
 if (!file_exists($_FILES['photo']['tmp_name']) || !is_uploaded_file($_FILES['photo']['tmp_name'])) {
-    $statement = $pdo->prepare("INSERT INTO outputdb (title, text, date, expiration_date) VALUES (?, ?, ?, ?)");
+    $statement = $pdo->prepare("INSERT INTO outputdb (title, text, picture, date, expiration_date ) VALUES (?, ?, ?, ?, ?)");
 
     $statement->bindParam(':title', $title, PDO::PARAM_STR);
     $statement->bindParam(':text', $text, PDO::PARAM_STR);
     $statement->bindParam(':date', $date_today, PDO::PARAM_INT);
     $statement->bindParam(':expiration_date', $expiration_date, PDO::PARAM_INT);
 
-    $statement->execute(array($title, $text, $date_today, $expiration_date));
+    $statement->execute(array($title, $text, '', $date_today, $expiration_date));
     header("Location: output.php");
 }
 
