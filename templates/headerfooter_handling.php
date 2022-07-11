@@ -1,6 +1,6 @@
 <?php
 
-include 'base_template.php';
+include 'inc/base_template.php';
 
 // strip tags for p removal for layout responsivness
 $headertext = strip_tags($_POST['headertext']);

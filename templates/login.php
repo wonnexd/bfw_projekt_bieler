@@ -1,5 +1,5 @@
 <?php
-include 'base_template.php';
+include 'inc/base_template.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -43,4 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </div>
 
 <?php
-include 'base_template_footer.php';
+include 'inc/base_template_footer.php';

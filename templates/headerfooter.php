@@ -1,5 +1,5 @@
 <?php
-include 'base_template.php';
+include 'inc/base_template.php';
 ?>
 
 <div class="container">
@@ -22,7 +22,7 @@ include 'base_template.php';
         </div>
     </nav>
 
-    <form action="laufbandbearbeitung.php" method="post">
+    <form action="headerfooter_handling.php" method="post">
         <div>
             <div class="row">
                 <div class="col">
@@ -67,4 +67,4 @@ include 'base_template.php';
 </script>
 
 <?php
-include 'base_template_footer.php';
+include 'inc/base_template_footer.php';

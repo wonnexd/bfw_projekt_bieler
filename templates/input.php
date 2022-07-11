@@ -1,5 +1,5 @@
 <?php
-include 'base_template.php';
+include 'inc/base_template.php';
 ?>
 
 <?php
@@ -97,16 +97,5 @@ if (isset($_SESSION['userid'])) {
     });
 </script>
 
-<div class="mt-5">
-    date to datetime
-    bilder einzeln hochladen
-    eingabe in der bearbeitung limitieren (responsivness)
-    eingabebearbeitung schön machen
-
-
-    bewegte bilder
-    mehrere bilder uploaden bzw. datenbankstruktur für bilder verändern
-</div>
-
 <?php
-include 'base_template_footer.php';
+include 'inc/base_template_footer.php';

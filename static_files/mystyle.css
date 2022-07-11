@@ -41,3 +41,20 @@
     padding-left: 15%;
     padding-right: 15%;
 }
+
+/*scrolling text*/
+.marquee {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee div {
+  overflow: hidden;
+  animation: marquee 10s linear infinite;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

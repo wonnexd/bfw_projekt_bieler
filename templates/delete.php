@@ -1,5 +1,5 @@
 <?php
-include 'base_template.php';
+include 'inc/base_template.php';
 $date = date("Y-m-d H:i:s");
 
 $sql = "SELECT headertext FROM headerfoooterdb where id = 1";
@@ -7,7 +7,7 @@ foreach ($pdo->query($sql) as $row) {
     $headertext = $row['headertext'];
 }
 
-$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
+$sql = "SELECT title, text, picture, date FROM outputdb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
 foreach ($pdo->query($sql) as $row) {
     $title1 = $row['title'];
     $text1 = $row['text'];
@@ -19,7 +19,7 @@ foreach ($pdo->query($sql) as $row) {
     $date1 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1,1";
+$sql = "SELECT title, text, picture, date FROM outputdb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1,1";
 foreach ($pdo->query($sql) as $row) {
     $title2 = $row['title'];
     $text2 = $row['text'];
@@ -31,7 +31,7 @@ foreach ($pdo->query($sql) as $row) {
     $date2 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 2, 1";
+$sql = "SELECT title, text, picture, date FROM outputdb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 2, 1";
 foreach ($pdo->query($sql) as $row) {
     $title3 = $row['title'];
     $text3 = $row['text'];
@@ -43,7 +43,7 @@ foreach ($pdo->query($sql) as $row) {
     $date3 = date("d-m-Y", strtotime($row['date']));
 }
 
-$sql = "SELECT title, text, picture, date FROM ausgabedb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 3, 1";
+$sql = "SELECT title, text, picture, date FROM outputdb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 3, 1";
 foreach ($pdo->query($sql) as $row) {
     $title4 = $row['title'];
     $text4 = $row['text'];
@@ -188,4 +188,4 @@ foreach ($pdo->query($sql) as $row) {
 </div>
 
 <?php
-include 'base_template_footer.php';
+include 'inc/base_template_footer.php';

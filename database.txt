@@ -1,0 +1,124 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 11. Jul 2022 um 09:26
+-- Server-Version: 10.4.24-MariaDB
+-- PHP-Version: 8.1.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+--
+-- Datenbank: `bieler`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `headerfoooterdb`
+--
+
+CREATE TABLE `headerfoooterdb` (
+  `id` int(5) NOT NULL,
+  `headertext` varchar(2000) NOT NULL,
+  `footertext` varchar(2000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `headerfoooterdb`
+--
+
+INSERT INTO `headerfoooterdb` (`id`, `headertext`, `footertext`) VALUES
+(1, 'Bieler&#39;s Antiquariat\r\n\r\nWein &amp; B&uuml;cher\r\n', 'Unsere &Ouml;ffnungszeiten sind Montags bis Freitags von 9 Uhr bis 18 Uhr, Samstags 10 Uhr bis 14 Uhr. Sie sind herzlich willkommen!\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `outputdb`
+--
+
+CREATE TABLE `outputdb` (
+  `id` int(11) NOT NULL,
+  `title` varchar(200) NOT NULL,
+  `text` varchar(250) NOT NULL,
+  `picture` varchar(300) NOT NULL,
+  `date` datetime DEFAULT NULL,
+  `expiration_date` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `outputdb`
+--
+
+INSERT INTO `outputdb` (`id`, `title`, `text`, `picture`, `date`, `expiration_date`) VALUES
+(74, 'sdadad', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<', 'python-powered-w-200x80.png', '2022-07-07 13:28:20', '0000-00-00 00:00:00'),
+(75, 'dsaaaaaaaaaaa', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea<', 'Octocat.jpg', '2022-07-07 13:28:32', '0000-00-00 00:00:00'),
+(77, 'dsadasdsada', '<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>\r\n', 'django-logo-negative.png', '2022-07-07 13:56:10', '0000-00-00 00:00:00'),
+(78, 'xvbcbnfxbgsayd', '<p>scdsvdsvgfdbdfbdfbd</p>\r\n', 'python-powered-w-200x80.png', '2022-07-07 13:59:01', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(5) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Daten für Tabelle `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(1, 'Timo', '$2y$10$YA93mw3L18sfjucgwDqbIe9GXgwL8nyeeGDWP64TxBpKVCTbnbd3K');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `headerfoooterdb`
+--
+ALTER TABLE `headerfoooterdb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `outputdb`
+--
+ALTER TABLE `outputdb`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `headerfoooterdb`
+--
+ALTER TABLE `headerfoooterdb`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT für Tabelle `outputdb`
+--
+ALTER TABLE `outputdb`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+
+--
+-- AUTO_INCREMENT für Tabelle `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
