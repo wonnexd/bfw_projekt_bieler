@@ -8,7 +8,7 @@ $text = $_POST['text'];
 $expiration_date = $_POST['expiration_date'];
 
 if ($expiration_date == '') {
-    $expiration_date = '2100-07-21 03:36:00';
+    $expiration_date = '2200-01-01 00:00:00';
 }
 
 # https://stackoverflow.com/questions/17492136/php-upload-if-isset-always-says-it-is

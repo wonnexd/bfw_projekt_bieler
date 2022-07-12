@@ -3,10 +3,10 @@
 include 'inc/base_template.php';
 $date = date("Y-m-d H:i:s");
 
-if (isset($_GET['id1'])) {
+if (isset($_POST['id1'])) {
     $sql = "DELETE FROM outputdb WHERE (expiration_date = '0000-00-00 00:00:00' OR expiration_date >= '$date') ORDER BY date DESC LIMIT 1";
     $pdo->exec($sql);
-} elseif (isset($_GET['id2'])) {
+} elseif (isset($_POST['id2'])) {
     $sql = "DELETE FROM `outputdb`
 WHERE `id` IN (
     SELECT `id` FROM (
@@ -16,7 +16,7 @@ WHERE `id` IN (
     ) AS `x`
 )";
     $pdo->exec($sql);
-} elseif (isset($_GET['id3'])) {
+} elseif (isset($_POST['id3'])) {
     $sql = "DELETE FROM `outputdb`
 WHERE `id` IN (
     SELECT `id` FROM (
@@ -26,7 +26,7 @@ WHERE `id` IN (
     ) AS `x`
 )";
     $pdo->exec($sql);
-} elseif (isset($_GET['id4'])) {
+} elseif (isset($_POST['id4'])) {
     $sql = "DELETE FROM `outputdb`
 WHERE `id` IN (
     SELECT `id` FROM (

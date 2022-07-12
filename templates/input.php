@@ -93,7 +93,7 @@ if (isset($_SESSION['userid'])) {
 <script type="text/javascript">
     // Initialize CKEditor
     CKEDITOR.replace('text', {
-        height: "200px"
+        height: "150px"
     });
 </script>
 
