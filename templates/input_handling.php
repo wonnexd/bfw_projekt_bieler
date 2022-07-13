@@ -59,8 +59,6 @@ elseif (isset($_FILES["photo"]) && $_FILES["photo"]["error"] == 0) {
             $statement->bindParam(':expiration_date', $expiration_date, PDO::PARAM_INT);
 
             $statement->execute(array($title, $text, $filename, $date_today, $expiration_date));
-            echo "Your file was uploaded successfully. </br>";
-            echo '<a href="Eingabe.php">Zurück zur Eingabe</a>';
         }
     } else {
         echo "Error: There was a problem uploading your file. Please try again.";
