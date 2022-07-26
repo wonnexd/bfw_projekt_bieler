@@ -1,6 +1,6 @@
 <?php
 session_start();
-$pdo = new PDO('mysql:host=localhost;dbname=bieler', 'root', 'newpassword');
+$pdo = new PDO('mysql:host=localhost;dbname=bieler', 'root', '');
 ?>
 
 <!DOCTYPE html>

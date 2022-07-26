@@ -7,52 +7,18 @@ foreach ($pdo->query($sql) as $row) {
     $headertext = $row['headertext'];
 }
 
-$sql = "SELECT title, text, picture, date FROM outputdb WHERE expiration_date >= '$date' ORDER BY date DESC LIMIT 1";
+$sql = "SELECT title, text, picture, date FROM outputdb WHERE expiration_date >= '$date' ORDER BY date DESC LIMIT 4";
+$counter = 1;
 foreach ($pdo->query($sql) as $row) {
-    $title1 = $row['title'];
-    $text1 = $row['text'];
+    ${"title" . $counter} = $row['title'];
+    ${"text" . $counter} = $row['text'];
     if ($row['picture'] != "") {
-        $picture1 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
+        ${"picture" . $counter} = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
     } else {
-        $picture1 = "";
+        ${"picture" . $counter} = "";
     }
-    $date1 = date("d-m-Y", strtotime($row['date']));
-}
-
-$sql = "SELECT title, text, picture, date FROM outputdb WHERE expiration_date >= '$date' ORDER BY date DESC LIMIT 1,1";
-foreach ($pdo->query($sql) as $row) {
-    $title2 = $row['title'];
-    $text2 = $row['text'];
-    if ($row['picture'] != "") {
-        $picture2 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
-    } else {
-        $picture2 = "";
-    }
-    $date2 = date("d-m-Y", strtotime($row['date']));
-}
-
-$sql = "SELECT title, text, picture, date FROM outputdb WHERE expiration_date >= '$date' ORDER BY date DESC LIMIT 2,1";
-foreach ($pdo->query($sql) as $row) {
-    $title3 = $row['title'];
-    $text3 = $row['text'];
-    if ($row['picture'] != "") {
-        $picture3 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
-    } else {
-        $picture3 = "";
-    }
-    $date3 = date("d-m-Y", strtotime($row['date']));
-}
-
-$sql = "SELECT title, text, picture, date FROM outputdb WHERE expiration_date >= '$date' ORDER BY date DESC LIMIT 3,1";
-foreach ($pdo->query($sql) as $row) {
-    $title4 = $row['title'];
-    $text4 = $row['text'];
-    if ($row['picture'] != "") {
-        $picture4 = "<img src = '../upload/" . $row['picture'] . "' height = '200 %'>";
-    } else {
-        $picture4 = "";
-    }
-    $date4 = date("d-m-Y", strtotime($row['date']));
+    ${"date" . $counter} = date("d-m-Y", strtotime($row['date']));
+    $counter++;
 }
 
 $sql = "SELECT footertext FROM headerfoooterdb where id = 1";
@@ -153,4 +119,3 @@ foreach ($pdo->query($sql) as $row) {
 
     <?php
     include 'inc/base_template_footer.php';
-    
